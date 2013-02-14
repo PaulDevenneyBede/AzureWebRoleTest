@@ -1,0 +1,19 @@
+﻿@using Bede.Middleware.Clients.Base
+@model Bede.Middleware.Clients.Security.Model.GetUserResponse
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>Membership Test</h2>
+<b>Return Status: </b> @Model.Status.ToString() <br/>
+<b>Message: </b> @Model.Message<br/>
+<hr/>
+@if (@Model.Status == ResultStatus.OK)
+{
+    <div>
+        <b>Username:</b> @Model.MembershipUser.UserName<br/>
+        <b>ProviderKey:</b> @Model.MembershipUser.ProviderUserKey<br/>
+        <b>Email:</b> @Model.MembershipUser.Email<br/>
+    </div>
+}

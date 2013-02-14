@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcWebRole1.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,6 +18,8 @@ namespace MvcWebRole1
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+
+            DependencyInjectionConfig.RegisterDependencyInjection(GlobalConfiguration.Configuration);
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
